@@ -64,7 +64,7 @@ export default {
             type: Object,
             default: () => {
                 return {
-                    height: '70vh',
+                    height: '64vh',
                     minHeight: '200px',
                     maxHeight: '1600px'
                 };
