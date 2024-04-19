@@ -7,12 +7,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'Create',
       component: CreateView
     },
     {
-      path: '/:pasteId',
-      name: 'Paste',
+      path: '/:id',
       component: PasteView
     }
   ]

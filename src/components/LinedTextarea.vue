@@ -1,7 +1,6 @@
 <template>
     <div class="lined-textarea">
         <div class="lined-textarea__lines"
-             v-if="!disabled"
              :style="{ 'padding-right': longestWidth + 'px'}"
         >
             <div class="lined-textarea__lines__inner"
@@ -18,8 +17,7 @@
         <textarea :disabled="disabled"
                   :placeholder="placeholder"
                   class="lined-textarea__content"
-                  :class="{ 'lined-textarea__content--disabled': disabled,
-                            'lined-textarea__content--wrap': !nowrap,
+                  :class="{ 'lined-textarea__content--wrap': !nowrap,
                             'lined-textarea__content--nowrap': nowrap }"
                   v-model="content"
                   v-on:scroll="scrollLines"
@@ -66,8 +64,9 @@ export default {
             type: Object,
             default: () => {
                 return {
-                    height: '54vh',
-                    maxHeight: '1000px'
+                    height: '70vh',
+                    minHeight: '200px',
+                    maxHeight: '1600px'
                 };
             }
         },
@@ -232,7 +231,6 @@ export default {
     background-color: #333;
     border: 1px solid #555;
     border-radius: 10px 0 0 10px;
-    border-right-width: 0;
     padding: 15px 10px 15px 15px;
     overflow: hidden;
     position: relative;
@@ -251,6 +249,7 @@ export default {
     color: red;
 }
 .lined-textarea__content {
+    font-size: 14px;
     background-color: #333;
     color: #fff;
     border: 1px solid #555;
@@ -277,11 +276,6 @@ export default {
     .lined-textarea__content--nowrap {
         white-space: nowrap;
     }
-}
-
-.lined-textarea__content--disabled {
-    border-radius: 10px;
-    border-left-width: 1px;
 }
 
 
